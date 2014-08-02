@@ -508,7 +508,7 @@ static struct xt_match socket_mt_reg[] __read_mostly = {
 		.checkentry	= socket_mt_v2_check,
 		.matchsize	= sizeof(struct xt_socket_mtinfo1),
 		.hooks		= (1 << NF_INET_PRE_ROUTING) |
-				  (1 << NF_INET_LOCAL_IN),
+				  (1 << NF_INET_LOCAL_IN) | (1 << NF_INET_LOCAL_OUT),
 		.me		= THIS_MODULE,
 	},
 #ifdef XT_SOCKET_HAVE_IPV6
@@ -520,7 +520,7 @@ static struct xt_match socket_mt_reg[] __read_mostly = {
 		.checkentry	= socket_mt_v2_check,
 		.matchsize	= sizeof(struct xt_socket_mtinfo1),
 		.hooks		= (1 << NF_INET_PRE_ROUTING) |
-				  (1 << NF_INET_LOCAL_IN),
+				  (1 << NF_INET_LOCAL_IN) | (1 << NF_INET_LOCAL_OUT),
 		.me		= THIS_MODULE,
 	},
 #endif
