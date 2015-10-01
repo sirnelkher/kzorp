@@ -38,3 +38,17 @@ env:
     - OBS_MINOR_VERSION=0
     - OBS_MAINTENANCE_VERSION=6
     - OBS_PACKAGE=kzorp
+    - TEST_OS=Ubuntu
+    - TEST_OS_VERSION=14.04
+    - secure: "Nap+7mVY7Qi9gofYXSaFUfk2YGq5rglKIsgx1Ty5epe5kmIcswrZX1mSdaIn6n7ReVt9zLqYoStlshUGhpj2FFmR+YBme05O+qNv9DsOomiDohNUz+ZDQKZZrc7klt6UALNvbjLcDSR3ZwvWUBKYEL94XJbqwSJuLRp0XYNciDg="
+    - KERNELRELEASE=3.13.0-24-generic
+
+addons:
+  coverity_scan:
+    project:
+      name: "balabit/kzorp"
+      description: "Build submitted via Travis CI"
+    notification_email: coroner@pfeifferszilard.hu
+    build_command_prepend: "autoreconf -if; ./configure; make clean"
+    build_command:   "make all-driver -j4"
+    branch_pattern: 6.0.6
