@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 8.0.0),
                dkms (>= 1.95),
                python-all (>= 2.7),
                apt,
-               linux-headers-generic | linux-headers-3.16.0-4-all
+               linux-headers-generic | linux-headers-3.16.0-4-all | linux-headers-amd64
 Standards-Version: 3.9.5
 Homepage: https://github.com/balabit/kzorp/
 
